@@ -36,8 +36,8 @@ const printPlaylists = function() {
        console.log(`${obj.id} : ${obj.name} - ${obj.tracks.length} tracks`);
   }
 }
-//printPlaylists();
-//console.log("prints a list of all tracks, using the following format:\n");
+printPlaylists();
+console.log("prints a list of all tracks, using the following format:\n");
 // prints a list of all tracks, using the following format:
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
@@ -75,7 +75,7 @@ for (obj of Object.values(library.playlists)){
        }
 }
 
-//printPlaylist("p02");
+printPlaylist("p02");
 
 // adds an existing track to an existing playlist
 const addTrackToPlaylist = function(trackId, playlistId) {
@@ -91,8 +91,10 @@ const addTrackToPlaylist = function(trackId, playlistId) {
       }
 }
 
-//addTrackToPlaylist("t01","p02");
-//console.log(library.playlists);
+addTrackToPlaylist("t01","p02");
+
+
+console.log(library.playlists);
 
 
 // generates a unique id
@@ -113,8 +115,8 @@ const newtrack={
 }
 library.tracks[newid]=newtrack;
 }
-//addTrack("Kesariya","Arijit","Brahmastra");
-//console.log(library.tracks);
+addTrack("Kesariya","Arijit","Brahmastra");
+console.log(library.tracks);
 
 
 
@@ -129,8 +131,8 @@ const addPlaylist = function(name) {
        }
   library.playlists[newPlaylistId]=newlist;
 }
-//addPlaylist("Bollywood");
-//console.log(library.playlists);
+addPlaylist("Bollywood");
+console.log(library.playlists);
 
 // STRETCH:
 // given a query string string, prints a list of tracks
