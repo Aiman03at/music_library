@@ -89,12 +89,12 @@ const addTrackToPlaylist = function(trackId, playlistId) {
               }
        }
       }
-      
-
 }
 
-addTrackToPlaylist("t01","p02");
-console.log(library.playlists);
+//addTrackToPlaylist("t01","p02");
+//console.log(library.playlists);
+
+
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
 const generateUid = function() {
@@ -104,16 +104,33 @@ const generateUid = function() {
 
 // adds a track to the library
 const addTrack = function(name, artist, album) {
-
-
+const newid=generateUid();
+const newtrack={
+       id:newid,
+       name:name,
+       artist:artist,
+       album:album
 }
+library.tracks[newid]=newtrack;
+}
+//addTrack("Kesariya","Arijit","Brahmastra");
+//console.log(library.tracks);
+
+
 
 
 // adds a playlist to the library
 const addPlaylist = function(name) {
-
+   const newPlaylistId=generateUid();
+       const newlist={
+              id:newPlaylistId,
+              name:name,
+              tracks:[]
+       }
+  library.playlists[newPlaylistId]=newlist;
 }
-
+addPlaylist("Bollywood");
+console.log(library.playlists);
 
 // STRETCH:
 // given a query string string, prints a list of tracks
