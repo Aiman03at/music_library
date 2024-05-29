@@ -129,8 +129,8 @@ const addPlaylist = function(name) {
        }
   library.playlists[newPlaylistId]=newlist;
 }
-addPlaylist("Bollywood");
-console.log(library.playlists);
+//addPlaylist("Bollywood");
+//console.log(library.playlists);
 
 // STRETCH:
 // given a query string string, prints a list of tracks
@@ -138,5 +138,14 @@ console.log(library.playlists);
 // tip: use "string".search("tri") 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
 const printSearchResults = function(query) {
+  const str=query.toLowerCase();
+  for(const track of Object.values(library.tracks)){
+       if(track.id.toLowerCase().search(str)!==-1||track.name.toLowerCase().search(str)!==-1||track.artist.toLowerCase().search(str)!==-1
+       ||track.album.toLowerCase().search(str!==-1)){
+              console.log(`Track ID: ${track.id}, Name: ${track.name}, Artist: ${track.artist}, Album: ${track.album}`);
+    }
+       }
 
-}
+  }
+
+printSearchResults("three");
